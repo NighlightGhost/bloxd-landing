@@ -4,7 +4,7 @@ const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') ?? '';
 const FROM_EMAIL = Deno.env.get('FROM_EMAIL') ?? 'Bloxd.io Guide <noreply@bloxdguide.online>';
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? '';
 const SUPABASE_SERVICE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
-const APP_URL = 'https://bloxd-guide.vercel.app';
+const APP_URL = 'https://bloxdguide.online';
 
 function wrap(content: string) {
   return `<div style="font-family:Inter,sans-serif;background:#04060f;padding:40px 24px;max-width:520px;margin:0 auto;"><div style="background:#0a0f1e;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:36px 32px;color:#fff;">${content}<hr style="border:none;border-top:1px solid rgba(255,255,255,0.06);margin:28px 0 20px;"/><p style="color:#1e293b;font-size:11px;line-height:1.6;">Bloxd.io Guide · <a href="https://bloxdguide.online" style="color:#334155;">bloxdguide.online</a></p></div></div>`;
