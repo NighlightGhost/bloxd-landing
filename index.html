@@ -530,8 +530,7 @@
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Something went wrong');
 
-        document.getElementById('form-wrap').style.display = 'none';
-        document.getElementById('success-wrap').style.display = 'block';
+        window.location.href = '/thank-you';
 
       } catch (err) {
         errEl.textContent = err.message || 'Something went wrong — please try again.';
