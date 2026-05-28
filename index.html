@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bloxd.io Guide — The Secret Weapon Top Players Are Using</title>
-  <meta name="description" content="Most Bloxd.io players lose for the same reasons. We built the fix. Join the waitlist and get free early access." />
-  <meta property="og:title" content="Bloxd.io Guide — The Secret Weapon Top Players Are Using" />
-  <meta property="og:description" content="Most Bloxd.io players lose for the same reasons. Join 500+ players already on the waitlist." />
+  <title>Bloxd.io Guide — Join the Waitlist</title>
+  <meta name="description" content="The Bloxd.io AI guide is coming. Join the waitlist for exclusive early access." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --blue: #3b82f6;
-      --blue-dark: #2563eb;
-      --green: #22c55e;
-      --red: #ef4444;
-    }
 
     body {
       font-family: 'Inter', sans-serif;
       background: #04060f;
       color: #fff;
       min-height: 100vh;
-      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    /* Subtle grid */
     body::before {
       content: '';
       position: fixed;
@@ -39,191 +34,123 @@
       pointer-events: none;
     }
 
-    /* Top glow */
-    .glow-top {
+    .glow {
       position: fixed;
-      top: -300px;
+      top: -250px;
       left: 50%;
       transform: translateX(-50%);
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 65%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 65%);
       pointer-events: none;
-      z-index: 0;
     }
 
     .wrap {
       position: relative;
       z-index: 1;
-      max-width: 580px;
-      margin: 0 auto;
-      padding: 0 20px;
+      max-width: 520px;
+      width: 100%;
     }
 
-    /* ── NAV ── */
-    nav {
-      padding: 20px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
+    /* Logo */
     .logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 9px;
       font-weight: 800;
       font-size: 16px;
+      margin-bottom: 48px;
     }
 
     .logo-box {
       width: 32px; height: 32px;
-      background: var(--blue);
+      background: #2563eb;
       border-radius: 8px;
       display: grid;
       place-items: center;
       font-size: 16px;
     }
 
-    .nav-link {
-      color: #64748b;
-      font-size: 14px;
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .nav-link:hover { color: #94a3b8; }
-
-    /* ── HERO ── */
-    .hero { padding: 52px 0 40px; text-align: center; }
-
-    .live-pill {
+    /* Badge */
+    .badge {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: rgba(34,197,94,0.1);
-      border: 1px solid rgba(34,197,94,0.25);
-      color: #86efac;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.25);
+      color: #93c5fd;
       font-size: 12px;
       font-weight: 700;
-      padding: 5px 13px;
+      padding: 5px 14px;
       border-radius: 100px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       text-transform: uppercase;
       letter-spacing: 0.6px;
     }
 
-    .live-dot {
-      width: 7px; height: 7px;
-      background: var(--green);
+    .dot {
+      width: 6px; height: 6px;
+      background: #3b82f6;
       border-radius: 50%;
-      animation: pulse 1.8s infinite;
+      animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
 
     h1 {
-      font-size: clamp(34px, 8vw, 58px);
+      font-size: clamp(32px, 7vw, 52px);
       font-weight: 900;
-      line-height: 1.06;
-      letter-spacing: -2px;
-      margin-bottom: 22px;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
     }
 
-    h1 em {
-      font-style: normal;
-      background: linear-gradient(130deg, #60a5fa 0%, #a78bfa 100%);
+    h1 span {
+      background: linear-gradient(130deg, #60a5fa, #a78bfa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .sub {
-      font-size: 17px;
-      color: #94a3b8;
+      color: #64748b;
+      font-size: 16px;
       line-height: 1.65;
-      max-width: 440px;
+      max-width: 380px;
       margin: 0 auto 36px;
     }
 
-    .sub strong { color: #cbd5e1; }
+    /* Form */
+    .form-wrap {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 18px;
+      padding: 28px 24px 22px;
+      margin-bottom: 24px;
+    }
 
-    /* ── SOCIAL PROOF BAR ── */
-    .proof-bar {
+    .field-row {
       display: flex;
-      align-items: center;
-      justify-content: center;
       gap: 10px;
-      margin-bottom: 36px;
+      margin-bottom: 12px;
     }
 
-    .avatars {
-      display: flex;
+    @media (max-width: 480px) {
+      .field-row { flex-direction: column; }
     }
 
-    .avatar {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      border: 2px solid #04060f;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      font-size: 13px;
-      display: grid;
-      place-items: center;
-      margin-left: -8px;
-    }
-
-    .avatar:first-child { margin-left: 0; }
-    .avatar:nth-child(2) { background: linear-gradient(135deg, #22c55e, #3b82f6); }
-    .avatar:nth-child(3) { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-    .avatar:nth-child(4) { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
-
-    .proof-text {
-      font-size: 13px;
-      color: #64748b;
-    }
-
-    .proof-text strong { color: #94a3b8; }
-
-    /* ── FORM CARD ── */
-    .card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 20px;
-      padding: 30px 28px 24px;
-      margin-bottom: 44px;
-    }
-
-    .card-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 7px;
-    }
-
-    input[type=text], input[type=email] {
-      width: 100%;
+    input {
+      flex: 1;
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: 11px;
-      padding: 13px 15px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 13px 14px;
       color: #fff;
-      font-size: 15px;
+      font-size: 14px;
       font-family: inherit;
-      margin-bottom: 14px;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
@@ -231,316 +158,166 @@
     input::placeholder { color: #334155; }
 
     input:focus {
-      border-color: rgba(59,130,246,0.6);
-      box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+      border-color: rgba(59,130,246,0.5);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
     }
 
-    .submit-btn {
+    .btn {
       width: 100%;
-      background: linear-gradient(135deg, #2563eb, #3b82f6);
+      background: #2563eb;
       color: #fff;
       border: none;
-      border-radius: 12px;
-      padding: 15px;
-      font-size: 16px;
+      border-radius: 11px;
+      padding: 14px;
+      font-size: 15px;
       font-weight: 800;
       font-family: inherit;
       cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
-      letter-spacing: -0.2px;
+      transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+      letter-spacing: -0.1px;
     }
 
-    .submit-btn:hover {
-      opacity: 0.92;
-      box-shadow: 0 0 28px rgba(59,130,246,0.4);
-    }
-
-    .submit-btn:active { transform: scale(0.98); }
-    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .btn:hover { background: #1d4ed8; box-shadow: 0 0 24px rgba(37,99,235,0.4); }
+    .btn:active { transform: scale(0.98); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
     .form-note {
-      text-align: center;
       font-size: 12px;
-      color: #334155;
+      color: #1e293b;
       margin-top: 12px;
-      line-height: 1.5;
     }
 
     .form-error {
-      background: rgba(239,68,68,0.1);
-      border: 1px solid rgba(239,68,68,0.2);
-      border-radius: 8px;
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.15);
       color: #fca5a5;
       font-size: 13px;
       padding: 10px 13px;
+      border-radius: 8px;
       margin-bottom: 12px;
       display: none;
+      text-align: left;
     }
 
-    /* ── SUCCESS ── */
-    .success { display: none; text-align: center; padding: 8px 0 16px; }
-    .success-emoji { font-size: 52px; margin-bottom: 14px; }
-    .success h3 { font-size: 22px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.5px; }
-    .success p { color: #64748b; font-size: 14px; line-height: 1.6; }
-    .success p strong { color: #94a3b8; }
-
-    /* ── PAIN SECTION ── */
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #475569;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .pain-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 48px;
-    }
-
-    .pain-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 13px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 13px;
-      padding: 16px 18px;
-    }
-
-    .pain-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
-
-    .pain-text h4 {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 3px;
-      color: #e2e8f0;
-    }
-
-    .pain-text p {
-      font-size: 13px;
-      color: #475569;
-      line-height: 1.5;
-    }
-
-    /* ── WHAT YOU GET ── */
-    .get-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 48px;
-    }
-
-    .get-item {
-      display: flex;
+    /* Counter */
+    .counter {
+      display: inline-flex;
       align-items: center;
-      gap: 11px;
-      font-size: 15px;
-      color: #cbd5e1;
+      gap: 8px;
+      color: #475569;
+      font-size: 13px;
     }
 
-    .get-check {
-      width: 22px; height: 22px;
-      background: rgba(34,197,94,0.12);
-      border: 1px solid rgba(34,197,94,0.25);
-      border-radius: 6px;
+    .avatars {
+      display: flex;
+    }
+
+    .av {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      border: 2px solid #04060f;
+      font-size: 12px;
       display: grid;
       place-items: center;
-      flex-shrink: 0;
-      font-size: 12px;
+      margin-left: -6px;
     }
 
-    /* ── FOOTER ── */
+    .av:first-child { margin-left: 0; background: linear-gradient(135deg,#3b82f6,#8b5cf6); }
+    .av:nth-child(2) { background: linear-gradient(135deg,#22c55e,#3b82f6); }
+    .av:nth-child(3) { background: linear-gradient(135deg,#f59e0b,#ef4444); }
+
     footer {
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 24px 0;
-      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin-top: 40px;
       color: #1e293b;
       font-size: 12px;
     }
-
-    footer a { color: #334155; text-decoration: none; }
-    footer a:hover { color: #475569; }
   </style>
 </head>
 <body>
-  <div class="glow-top"></div>
+  <div class="glow"></div>
 
   <div class="wrap">
-    <nav>
-      <div class="logo">
-        <div class="logo-box">🎮</div>
-        Bloxd.io Guide
+    <div class="logo">
+      <div class="logo-box">🎮</div>
+      Bloxd.io Guide
+    </div>
+
+    <div class="badge">
+      <div class="dot"></div>
+      Waitlist now open
+    </div>
+
+    <h1>The Bloxd.io guide<br/>is <span>coming soon.</span></h1>
+
+    <p class="sub">
+      Be the first to know when we launch.<br/>
+      Join the waitlist and get exclusive early access.
+    </p>
+
+    <div class="form-wrap">
+      <div id="form-inner">
+        <div class="field-row">
+          <input type="text" id="name" placeholder="Your username" autocomplete="given-name" />
+          <input type="email" id="email" placeholder="Email address" autocomplete="email" />
+        </div>
+        <div class="form-error" id="err"></div>
+        <button class="btn" id="btn" onclick="submit()">Join the waitlist</button>
+        <p class="form-note">No spam. Unsubscribe anytime.</p>
       </div>
-      <a class="nav-link" href="https://bloxd-guide.vercel.app">Already have access →</a>
-    </nav>
+    </div>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="live-pill">
-        <div class="live-dot"></div>
-        Waitlist open
+    <div class="counter">
+      <div class="avatars">
+        <div class="av">🎮</div>
+        <div class="av">⚔️</div>
+        <div class="av">🏆</div>
       </div>
-
-      <h1>The tool top<br/>Bloxd.io players<br/><em>don't want you</em><br/>to know about.</h1>
-
-      <p class="sub">
-        An AI guide that answers any Bloxd.io question in seconds.<br/>
-        <strong>PvP combos. Parkour routes. UHC strats. SMP tips.</strong><br/>
-        Get early access — free.
-      </p>
-
-      <!-- Social proof -->
-      <div class="proof-bar">
-        <div class="avatars">
-          <div class="avatar">🎮</div>
-          <div class="avatar">⚔️</div>
-          <div class="avatar">🏆</div>
-          <div class="avatar">💎</div>
-        </div>
-        <p class="proof-text"><strong>500+ players</strong> already on the waitlist</p>
-      </div>
-
-      <!-- FORM CARD -->
-      <div class="card">
-        <div id="form-wrap">
-          <p class="card-title">🔒 Claim your free early access</p>
-
-          <label for="name">Your username</label>
-          <input type="text" id="name" placeholder="e.g. xBloxdKing" autocomplete="given-name" />
-
-          <label for="email">Email address</label>
-          <input type="email" id="email" placeholder="you@example.com" autocomplete="email" />
-
-          <div class="form-error" id="form-error"></div>
-
-          <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">
-            ⚡ Join the waitlist — it's free
-          </button>
-
-          <p class="form-note">
-            No spam. No credit card. Just Bloxd.io tips and early access.<br/>
-            Unsubscribe anytime in one click.
-          </p>
-        </div>
-
-        <div class="success" id="success-wrap">
-          <div class="success-emoji">🎉</div>
-          <h3>You're on the list!</h3>
-          <p>
-            Check your inbox — <strong>your first tip is already on its way.</strong><br/><br/>
-            We'll send you exclusive Bloxd.io tips over the next week, then<br/>
-            unlock your full access when it's ready.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PAIN POINTS -->
-    <p class="section-label">Sound familiar?</p>
-    <ul class="pain-list">
-      <li class="pain-item">
-        <div class="pain-icon">😤</div>
-        <div class="pain-text">
-          <h4>You keep dying in PvP and don't know why</h4>
-          <p>You're swinging, they're hitting. The game feels rigged — but it's not.</p>
-        </div>
-      </li>
-      <li class="pain-item">
-        <div class="pain-icon">😩</div>
-        <div class="pain-text">
-          <h4>Parkour courses feel impossible</h4>
-          <p>Same jump. Same fail. You've watched videos but still can't nail the timing.</p>
-        </div>
-      </li>
-      <li class="pain-item">
-        <div class="pain-icon">😵</div>
-        <div class="pain-text">
-          <h4>UHC feels like a completely different game</h4>
-          <p>Spikes, cobwebs, potions — you don't even know what half of it does.</p>
-        </div>
-      </li>
-      <li class="pain-item">
-        <div class="pain-icon">🏚️</div>
-        <div class="pain-text">
-          <h4>Your SMP base keeps getting raided</h4>
-          <p>You built it, they destroyed it. You don't know how to protect what you've got.</p>
-        </div>
-      </li>
-    </ul>
-
-    <!-- WHAT YOU GET -->
-    <p class="section-label">What you get with early access</p>
-    <ul class="get-list">
-      <li class="get-item"><div class="get-check">✓</div> Ask any Bloxd.io question — get an instant answer</li>
-      <li class="get-item"><div class="get-check">✓</div> PvP combos, timing tricks and strafe patterns</li>
-      <li class="get-item"><div class="get-check">✓</div> Step-by-step parkour breakdowns</li>
-      <li class="get-item"><div class="get-check">✓</div> Full UHC and SMP strategy guides</li>
-      <li class="get-item"><div class="get-check">✓</div> Updated as the game changes</li>
-      <li class="get-item"><div class="get-check">✓</div> Free for early access members</li>
-    </ul>
+      500+ players already waiting
+    </div>
   </div>
 
-  <footer>
-    <div class="wrap">
-      © 2026 Bloxd.io Guide &nbsp;·&nbsp;
-      <a href="https://bloxd-guide.vercel.app">Open the app</a> &nbsp;·&nbsp;
-      <a href="https://www.youtube.com/@NighlightBloxd">YouTube</a>
-    </div>
-  </footer>
+  <footer>© 2026 Bloxd.io Guide</footer>
 
   <script>
-    const SUPABASE_URL = 'https://qsxmdlkqdonxttoqrrar.supabase.co';
-    const ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzeG1kbGtxZG9ueHR0b3FycmFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5MjY1NjUsImV4cCI6MjA5MTUwMjU2NX0.WGqpDVuHlE0lIyPW8Zat4FKwpwKiArWnOIjTJdMYsf4';
+    const URL = 'https://qsxmdlkqdonxttoqrrar.supabase.co';
+    const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzeG1kbGtxZG9ueHR0b3FycmFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU5MjY1NjUsImV4cCI6MjA5MTUwMjU2NX0.WGqpDVuHlE0lIyPW8Zat4FKwpwKiArWnOIjTJdMYsf4';
 
-    async function handleSubmit() {
-      const name  = document.getElementById('name').value.trim();
+    async function submit() {
+      const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
-      const errEl = document.getElementById('form-error');
-      const btn   = document.getElementById('submit-btn');
+      const err = document.getElementById('err');
+      const btn = document.getElementById('btn');
 
-      errEl.style.display = 'none';
-
+      err.style.display = 'none';
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        errEl.textContent = 'Please enter a valid email address.';
-        errEl.style.display = 'block';
+        err.textContent = 'Please enter a valid email address.';
+        err.style.display = 'block';
         return;
       }
 
       btn.disabled = true;
-      btn.textContent = 'Saving your spot...';
+      btn.textContent = 'Joining...';
 
       try {
-        const res = await fetch(`${SUPABASE_URL}/functions/v1/capture-lead`, {
+        const res = await fetch(`${URL}/functions/v1/capture-lead`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'apikey': ANON,
-            'Authorization': `Bearer ${ANON}`,
-          },
+          headers: { 'Content-Type': 'application/json', 'apikey': KEY, 'Authorization': `Bearer ${KEY}` },
           body: JSON.stringify({ name, email, source: 'waitlist' }),
         });
-
         const data = await res.json();
         if (!res.ok) throw new Error(data.error || 'Something went wrong');
-
         window.location.href = '/thank-you';
-
-      } catch (err) {
-        errEl.textContent = err.message || 'Something went wrong — please try again.';
-        errEl.style.display = 'block';
+      } catch (e) {
+        err.textContent = e.message || 'Something went wrong. Please try again.';
+        err.style.display = 'block';
         btn.disabled = false;
-        btn.textContent = '⚡ Join the waitlist — it\'s free';
+        btn.textContent = 'Join the waitlist';
       }
     }
 
-    document.addEventListener('keydown', e => { if (e.key === 'Enter') handleSubmit(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
   </script>
 </body>
 </html>

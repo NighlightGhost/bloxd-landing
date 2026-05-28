@@ -137,12 +137,17 @@ Deno.serve(async (req) => {
     // Store lead
     await supabase.from('leads').insert({ name: name || '', email, source });
 
-    // Send Email 1 immediately
-    await fetch('https://api.resend.com/emails', {
+    // Send Email 1 immediately — throw on failure so caller knows
+    const resendRes = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ from: FROM_EMAIL, to: email, subject: SEQUENCE[0].subject, html: SEQUENCE[0].html(name || '') }),
     });
+    if (!resendRes.ok) {
+      const resendErr = await resendRes.text();
+      console.error('Resend error:', resendErr);
+      throw new Error(`Email send failed: ${resendErr}`);
+    }
 
     // Queue Emails 2 and 3
     for (let i = 1; i < SEQUENCE.length; i++) {
